@@ -1,0 +1,21 @@
+namespace ConsoleApp1zadanie
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            byte age;
+            sbyte temperature;
+            short damageTakenAndHealing;
+            ushort damage;
+            int zoom;
+            uint bossDamage;
+            float arrivalTime;
+            double departureDate;
+            char symbols;
+            string name;
+
+
+        }
+    }
+}
