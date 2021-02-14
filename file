@@ -4,21 +4,15 @@ namespace ConsoleApp1zadanie
     {
         static void Main(string[] args)
         {
-            int gold;
-            int crystalCount;
-            int Price = 10;
-
-            Console.Write("Введите количество своего золота: ");
-            gold = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Здравствуйте, у нас кристалы пропасти по 10 золотых, сколько кристалов Вы хотите купить? ");
-            crystalCount = Convert.ToInt32(Console.ReadLine());
-
-            gold -= crystalCount * Price;
-
-            Console.Write("У Вас : " + gold + " золотых и " + crystalCount + " кристалов");
-            
-            Console.ReadKey();
+            int image = 52;
+            int numberOfRows = 3;
+            int numberOfRowsFilled = image / numberOfRows;
+            int numberOfExtraPictures = 52 % 3;
+            Console.Write("Колличество радов картинок: ");
+            Console.WriteLine(numberOfRowsFilled);
+            Console.Write("Колличество лишних картинок: ");
+            Console.WriteLine(numberOfExtraPictures);
+            Console.ReadLine();
         
         }
     }
