@@ -1,0 +1,27 @@
+namespace ConsoleApp1zadanie
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int gold;
+            int crystalCount;
+            int crystalPrice = 10;
+
+            Console.Write("Введите количество своего золота: ");
+            gold = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Здравствуйте, у нас кристалы по 10 золотых, сколько кристалов Вы хотите купить? ");
+            crystalCount = Convert.ToInt32(Console.ReadLine());
+
+            gold -= crystalCount * crystalPrice;
+
+            Console.Write("У Вас : " + gold + " золотых и " + crystalCount + " кристалов");
+            
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
