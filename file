@@ -3,21 +3,21 @@ namespace ConsoleApp1zadanie
     class Program
     {
         static void Main(string[] args)
-        {
+        { 
             int imageCount = 52;
             int countOfPicturesInOneRow = 3;
             int countOfFullyFilledRows;
             int countOfExtraImage;
-            
-            int countOfFullyFilledRows = imageCount / countOfPicturesInOneRow;
-            int countOfExtraRows = imageCount % countOfPicturesInOneRow;
-            
+
+            countOfFullyFilledRows = imageCount / countOfPicturesInOneRow;
+            countOfExtraImage = imageCount % countOfPicturesInOneRow;
+
             Console.Write("Колличество полностью заполненных рядов: ");
             Console.WriteLine(countOfFullyFilledRows);
-            
+
             Console.Write("Колличество лишних картинок: ");
             Console.WriteLine(countOfExtraImage);
-            
+
             Console.ReadLine();
         
         }
