@@ -4,14 +4,20 @@ namespace ConsoleApp1zadanie
     {
         static void Main(string[] args)
         {
-            int image = 52;
-            int numberOfRows = 3;
-            int numberOfRowsFilled = image / numberOfRows;
-            int numberOfExtraPictures = 52 % 3;
-            Console.Write("Колличество радов картинок: ");
-            Console.WriteLine(numberOfRowsFilled);
+            int imageCount = 52;
+            int countOfPicturesInOneRow = 3;
+            int countOfFullyFilledRows;
+            int countOfExtraImage;
+            
+            int countOfFullyFilledRows = imageCount / countOfPicturesInOneRow;
+            int countOfExtraRows = imageCount % countOfPicturesInOneRow;
+            
+            Console.Write("Колличество полностью заполненных рядов: ");
+            Console.WriteLine(countOfFullyFilledRows);
+            
             Console.Write("Колличество лишних картинок: ");
-            Console.WriteLine(numberOfExtraPictures);
+            Console.WriteLine(countOfExtraImage);
+            
             Console.ReadLine();
         
         }
