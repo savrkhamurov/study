@@ -1,0 +1,23 @@
+namespace masteringСycles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string textInput;
+            int repetitionsCount;
+
+            Console.Write("Введите текст: ");
+            textInput = Console.ReadLine();
+
+            Console.Write("Введите количество повторений: ");
+            repetitionsCount = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < repetitionsCount; i++)
+            {
+                Console.WriteLine(textInput);
+            }
+            Console.ReadKey();
+        }
+    }
+}
