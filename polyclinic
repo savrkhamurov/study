@@ -4,15 +4,15 @@ namespace polyclinic
     {
         static void Main(string[] args)
         {
-            int numberOfOldWomenInLine;
-            int FixedReceptionTimeForOnePerson = 10;
+            int oldWomenInLineCount;
+            int receptionTimeForOnePerson = 10;
             int clock;
             int time;
             int minutes;
 
-            Console.Write("Сколько старушек в очереди? ");
-            numberOfOldWomenInLine = Convert.ToInt32(Console.ReadLine());
-            time = numberOfOldWomenInLine * FixedReceptionTimeForOnePerson;
+            Console.Write("Введите кол-во старушек: ");
+            oldWomenInLineCount = Convert.ToInt32(Console.ReadLine());
+            time = oldWomenInLineCount * receptionTimeForOnePerson;
             clock = time / 60;
             minutes = time % 60;
 
