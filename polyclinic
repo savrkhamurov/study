@@ -1,0 +1,23 @@
+namespace polyclinic
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOfOldWomenInLine;
+            int FixedReceptionTimeForOnePerson = 10;
+            int clock;
+            int time;
+            int minutes;
+
+            Console.Write("Сколько старушек в очереди? ");
+            numberOfOldWomenInLine = Convert.ToInt32(Console.ReadLine());
+            time = numberOfOldWomenInLine * FixedReceptionTimeForOnePerson;
+            clock = time / 60;
+            minutes = time % 60;
+
+            Console.WriteLine("Вы должны отстоять в очереди " + clock + " часа и " + minutes + " минут.");
+            Console.ReadKey();
+        }
+    }
+}
