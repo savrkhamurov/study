@@ -1,0 +1,30 @@
+using System;
+
+namespace workHome1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            int age;
+            string zodiaсSign;
+            string placeOfWork;
+
+            Console.Write("Введите своё имя: ");
+            name = Console.ReadLine();
+
+            Console.Write("Введите свой возраст: ");
+            age = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите свой знак задиака: ");
+            zodiaсSign = Console.ReadLine();
+
+            Console.Write("Введите своё место работы: ");
+            placeOfWork = Console.ReadLine();
+
+            Console.Write("Вас зовут " + name + ", вам " + age + " год, вы " + zodiaсSign + " и работаете на " + placeOfWork);
+            Console.ReadKey();
+        }
+    }
+}
