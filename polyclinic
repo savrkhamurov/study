@@ -4,19 +4,19 @@ namespace polyclinic
     {
         static void Main(string[] args)
         {
-            int oldWomenInLineCount;
-            int receptionTimeForOnePerson = 10;
-            int clock;
-            int time;
-            int minutes;
+            int peopleCount;
+            int receptionTimeForPerson = 10;
+            int totalTimeInMinutes;
+            int timeInHours;
+            int timeInMinutes;
 
-            Console.Write("Введите кол-во старушек: ");
-            oldWomenInLineCount = Convert.ToInt32(Console.ReadLine());
-            time = oldWomenInLineCount * receptionTimeForOnePerson;
-            clock = time / 60;
-            minutes = time % 60;
+            Console.Write("Введите кол-во людей в очереди: ");
+            peopleCount = Convert.ToInt32(Console.ReadLine());
+            totalTimeInMinutes = peopleCount * receptionTimeForPerson;
+            timeInHours = totalTimeInMinutes / 60;
+            timeInMinutes = totalTimeInMinutes % 60;
 
-            Console.WriteLine("Вы должны отстоять в очереди " + clock + " часа и " + minutes + " минут.");
+            Console.WriteLine("Вы должны отстоять в очереди " + timeInHours + " часа и " + timeInMinutes + " минут.");
             Console.ReadKey();
         }
     }
