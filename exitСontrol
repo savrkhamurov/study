@@ -1,22 +1,16 @@
+using System;
+
 namespace homeWork___ConditionalStatementsAndLoops
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите exit для выхода из цикла: ");
-            string input = Console.ReadLine();
-            string cycleСancel = "exit";
-
-            while (true)
+            string userInput = "";
+            while (userInput != "exit")
             {
-                input = Console.ReadLine();
-                if (cycleСancel == input)
-                {
-                    Console.WriteLine("Цикл завершён :(  ");
-                    break;
-                }
-                Console.WriteLine("Цикл продолжается:) ! ! !"); 
+                Console.Write("Введите exit для выхода из цикла: ");
+                userInput = Console.ReadLine();
             }
             Console.ReadKey();
         }
