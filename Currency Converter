@@ -1,0 +1,126 @@
+using System;
+
+namespace сurrencyConverter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float balanceEu = 1000;
+            float balanceUsd = 1500;
+            float balanceRu = 2000000;
+            float courceEuToUsd = 1.21f; float courceEuToRu = 89.72f;
+            float courceUsdToRu = 74.04f;
+            float currencyCount;
+            string userInput = "";
+           while (userInput != "exit")
+           {
+                Console.WriteLine("Ваш баланс: " + balanceEu + " евро /" + balanceUsd + " долларов /" + balanceRu + " рублей");
+                Console.WriteLine("Если хотите выйти введите: выход ");
+                Console.WriteLine("Какую и на какую валюту обменять: ");
+                Console.WriteLine("Евро на Доллары / Евро на Рубли");
+                Console.WriteLine("Доллары на Евро / Доллары на Рубли");
+                Console.WriteLine("Рубли на Евро / Рубли на Доллары");
+                userInput = Console.ReadLine();
+
+              switch (userInput)
+              {
+                case "Евро на Доллары":
+                    Console.Write("Сколько вы хотите обменять:");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    if (balanceEu >= currencyCount)
+                    {
+                        balanceEu -= currencyCount;
+                        balanceUsd += currencyCount * courceEuToUsd;
+                    }
+                    else
+                    {
+                        Console.WriteLine("У вас нет такого количества данной валюты!");
+                    }
+                         break;
+                case "Евро на Рубли":
+                    Console.Write("Сколько вы хотите обменять:");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    if (balanceEu >= currencyCount)
+                    {
+                        balanceEu -= currencyCount;
+                        balanceRu += currencyCount * courceEuToRu;
+                    }
+                    else
+                    {
+                        Console.WriteLine("У вас нет такого количества данной валюты!");
+                    }
+                    break;
+
+                case "Доллары на Евро":
+                    Console.Write("Сколько вы хотите обменять:");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    if (balanceUsd >= currencyCount)
+                    {
+                        balanceUsd -= currencyCount;
+                        balanceEu += currencyCount / courceEuToUsd;
+                    }
+                    else
+                    {
+                        Console.WriteLine("У вас нет такого количества данной валюты!");
+                    }
+                    break;
+
+                case "Доллары на Рубли":
+                    Console.Write("Сколько вы хотите обменять:");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    if (balanceUsd >= currencyCount)
+                    {
+                        balanceUsd -= currencyCount;
+                        balanceRu += currencyCount * courceUsdToRu;
+                    }
+                    else
+                    {
+                        Console.WriteLine("У вас нет такого количества данной валюты!");
+                    }
+                    break;
+
+                case "Рубли на Евро":
+                    Console.Write("Сколько вы хотите обменять:");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    if (balanceRu >= currencyCount)
+                    {
+                        balanceRu -= currencyCount;
+                        balanceEu += currencyCount / courceEuToRu;
+                    }
+                    else
+                    {
+                        Console.WriteLine("У вас нет такого количества данной валюты!");
+                    }
+                    break;
+
+                case "Рубли на Доллары":
+                    Console.Write("Сколько вы хотите обменять:");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    if (balanceUsd >= currencyCount)
+                    {
+                        balanceRu -= currencyCount;
+                        balanceUsd += currencyCount / courceUsdToRu;
+                    }
+                    else
+                    {
+                        Console.WriteLine("У вас нет такого количества данной валюты!");
+                    }
+                    break;
+
+                    case "выход":
+                        Console.WriteLine("Программа завершена!");
+                        Environment.Exit(0);
+                        break;
+
+
+                    default:  
+                      Console.WriteLine("Вы ввели неизвестную команду!");
+                         break;
+                        
+              }
+           }
+            
+        }
+    }
+}
