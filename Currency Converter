@@ -6,16 +6,17 @@ namespace сurrencyConverter
     {
         static void Main(string[] args)
         {
-            float balanceEu = 1000;
-            float balanceUsd = 1500;
-            float balanceRu = 2000000;
-            float courceEuToUsd = 1.21f; float courceEuToRu = 89.72f;
-            float courceUsdToRu = 74.04f;
+            float balanceEUR = 1000;
+            float balanceUSD = 1500;
+            float balanceRUB = 2000000;
+            float courceEURToUSD = 1.21f;
+            float courceEURToRUB = 89.72f;
+            float courceUSDToRUB = 74.04f;
             float currencyCount;
             string userInput = "";
-           while (userInput != "exit")
+           while (userInput != "выход")
            {
-                Console.WriteLine("Ваш баланс: " + balanceEu + " евро /" + balanceUsd + " долларов /" + balanceRu + " рублей");
+                Console.WriteLine("Ваш баланс: " + balanceEUR + " евро /" + balanceUSD + " долларов /" + balanceRUB + " рублей");
                 Console.WriteLine("Если хотите выйти введите: выход ");
                 Console.WriteLine("Какую и на какую валюту обменять: ");
                 Console.WriteLine("Евро на Доллары / Евро на Рубли");
@@ -28,10 +29,10 @@ namespace сurrencyConverter
                 case "Евро на Доллары":
                     Console.Write("Сколько вы хотите обменять:");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
-                    if (balanceEu >= currencyCount)
+                    if (balanceEUR >= currencyCount)
                     {
-                        balanceEu -= currencyCount;
-                        balanceUsd += currencyCount * courceEuToUsd;
+                        balanceEUR -= currencyCount;
+                        balanceUSD += currencyCount * courceEURToUSD;
                     }
                     else
                     {
@@ -41,10 +42,10 @@ namespace сurrencyConverter
                 case "Евро на Рубли":
                     Console.Write("Сколько вы хотите обменять:");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
-                    if (balanceEu >= currencyCount)
+                    if (balanceEUR >= currencyCount)
                     {
-                        balanceEu -= currencyCount;
-                        balanceRu += currencyCount * courceEuToRu;
+                        balanceEUR -= currencyCount;
+                        balanceRUB += currencyCount * courceEURToRUB;
                     }
                     else
                     {
@@ -55,10 +56,10 @@ namespace сurrencyConverter
                 case "Доллары на Евро":
                     Console.Write("Сколько вы хотите обменять:");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
-                    if (balanceUsd >= currencyCount)
+                    if (balanceUSD >= currencyCount)
                     {
-                        balanceUsd -= currencyCount;
-                        balanceEu += currencyCount / courceEuToUsd;
+                        balanceUSD -= currencyCount;
+                        balanceEUR += currencyCount / courceEURToUSD;
                     }
                     else
                     {
@@ -69,10 +70,10 @@ namespace сurrencyConverter
                 case "Доллары на Рубли":
                     Console.Write("Сколько вы хотите обменять:");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
-                    if (balanceUsd >= currencyCount)
+                    if (balanceUSD >= currencyCount)
                     {
-                        balanceUsd -= currencyCount;
-                        balanceRu += currencyCount * courceUsdToRu;
+                        balanceUSD -= currencyCount;
+                        balanceRUB += currencyCount * courceUSDToRUB;
                     }
                     else
                     {
@@ -83,10 +84,10 @@ namespace сurrencyConverter
                 case "Рубли на Евро":
                     Console.Write("Сколько вы хотите обменять:");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
-                    if (balanceRu >= currencyCount)
+                    if (balanceRUB >= currencyCount)
                     {
-                        balanceRu -= currencyCount;
-                        balanceEu += currencyCount / courceEuToRu;
+                        balanceRUB -= currencyCount;
+                        balanceEUR += currencyCount / courceEURToRUB;
                     }
                     else
                     {
@@ -97,22 +98,16 @@ namespace сurrencyConverter
                 case "Рубли на Доллары":
                     Console.Write("Сколько вы хотите обменять:");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
-                    if (balanceUsd >= currencyCount)
+                    if (balanceUSD >= currencyCount)
                     {
-                        balanceRu -= currencyCount;
-                        balanceUsd += currencyCount / courceUsdToRu;
+                        balanceRUB -= currencyCount;
+                        balanceUSD += currencyCount / courceUSDToRUB;
                     }
                     else
                     {
                         Console.WriteLine("У вас нет такого количества данной валюты!");
                     }
                     break;
-
-                    case "выход":
-                        Console.WriteLine("Программа завершена!");
-                        Environment.Exit(0);
-                        break;
-
 
                     default:  
                       Console.WriteLine("Вы ввели неизвестную команду!");
