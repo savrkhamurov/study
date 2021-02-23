@@ -1,0 +1,68 @@
+using System;
+
+namespace consoleMenu
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string userInput = "";
+            int setUserPassword = 0;
+            string setUserName = "";
+            string setUserGender = "";
+            int setUserAge = 0;
+            string setTextColor;
+            Console.WriteLine("Введите нужную команду:\n Установить пароль \n Ввести имя \n Выбрать пол \n Ввести возраст\n Настроить цвет текста\n Вывод общей информации\n Выход ");
+
+            while (userInput != "Выход")
+            {
+                userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "Установить пароль":
+                        Console.Write("Установите цифровой пароль : ");
+                        setUserPassword = Convert.ToInt32(Console.ReadLine());
+                    break;
+                    case "Ввести имя":
+                        Console.Write("Введите имя: ");
+                        setUserName = Console.ReadLine();
+                        break;
+                    case "Выбрать пол":
+                        Console.Write("Введите пол (Мужской-Женский): ");
+                        setUserGender = Console.ReadLine();
+                        break;
+                    case "Ввести возраст":
+                        Console.Write("Введите свой возраст: ");
+                        setUserAge = Convert.ToInt32(Console.ReadLine());
+                        break;
+                    case "Настроить цвет текста":
+                        Console.Write("Укажите нужный вам цвет на выбор (Красный. Зелёный. Жёлтый): ");
+                        setTextColor = Console.ReadLine();
+                        if (setTextColor == "Красный")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        else if (setTextColor == "Зелёный")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        else if (setTextColor == "Жёлтый")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Такого цвета в выборе нет.");
+                        }
+                        break;
+                    case "Вывод общей информации":
+                        Console.Write("Ваш пароль " + setUserPassword + " Ваше имя: " + setUserName + " Ваш пол: " + setUserGender + " Ваш возраст: " + setUserAge + " лет");
+                        break;
+                    default:
+                        Console.WriteLine("Вы ввели неизвестную команду!");
+                        break;
+                }
+            }
+        }
+    }
+}
