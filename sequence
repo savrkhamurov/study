@@ -1,0 +1,20 @@
+using System;
+
+namespace sequence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //данный цикл был выбран, благодаря его компактности и простате.
+            int incrementNumber = 7;
+            int numberСounter = 0;
+            
+            while (numberСounter != 98)
+            {
+               Console.WriteLine(numberСounter += incrementNumber);
+            }
+            Console.ReadLine();
+        }
+    }
+}
