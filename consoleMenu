@@ -7,46 +7,60 @@ namespace consoleMenu
         static void Main(string[] args)
         {
             string userInput = "";
-            int UserPassword = 0;
-            string UserName = "";
-            string UserGender = "";
-            int UserAge = 0;
-            string TextColor;
-            Console.WriteLine("Введите нужную команду:\n Установить пароль \n Ввести имя \n Выбрать пол \n Ввести возраст\n Настроить цвет текста\n Вывод общей информации\n Выход ");
+            string userPasswordInput = "";
+            string userNameInput = "";
+            string userGenderInput = "";
+            int userAgeInput = 0;
+            string textColorSet;
+            Console.WriteLine(" Список команд:\n Установить пароль \n Ввести имя \n Выбрать пол \n Ввести возраст\n Настроить цвет текста\n Вывод общей информации\n Выход ");
 
             while (userInput != "Выход")
             {
+                Console.Write("Введите команду: ");
                 userInput = Console.ReadLine();
                 switch (userInput)
                 {
                     case "Установить пароль":
-                        Console.Write("Установите цифровой пароль : ");
-                        UserPassword = Convert.ToInt32(Console.ReadLine());
-                    break;
+                        Console.Write("Установите буквенный пароль : ");
+                        userPasswordInput = Console.ReadLine();
+                        Console.WriteLine("Пароль установлен");
+                    continue;
                     case "Ввести имя":
                         Console.Write("Введите имя: ");
-                        UserName = Console.ReadLine();
-                        break;
+                        userNameInput = Console.ReadLine();
+                        continue;
                     case "Выбрать пол":
-                        Console.Write("Введите пол (Мужской-Женский): ");
-                        UserGender = Console.ReadLine();
-                        break;
+                        Console.Write("Введите пол: ");
+                        userInput = Console.ReadLine();
+                        if (userInput == "Мужской")
+                        {
+                            userGenderInput = "Мужской";
+                        }
+                        else if (userInput == "Женский")
+                        {
+                            userGenderInput = "Женский";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Вы ввели не корректные данные! пример (Мужской)");
+                        }
+                        continue;
                     case "Ввести возраст":
                         Console.Write("Введите свой возраст: ");
-                        UserAge = Convert.ToInt32(Console.ReadLine());
-                        break;
+                        userAgeInput = Convert.ToInt32(Console.ReadLine());
+                        continue;
                     case "Настроить цвет текста":
                         Console.Write("Укажите нужный вам цвет на выбор (Красный. Зелёный. Жёлтый): ");
-                        TextColor = Console.ReadLine();
-                        if (TextColor == "Красный")
+                        textColorSet = Console.ReadLine();
+                        if (textColorSet == "Красный")
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                         }
-                        else if (TextColor == "Зелёный")
+                        else if (textColorSet == "Зелёный")
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                         }
-                        else if (TextColor == "Жёлтый")
+                        else if (textColorSet == "Жёлтый")
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
                         }
@@ -54,9 +68,21 @@ namespace consoleMenu
                         {
                             Console.WriteLine("Такого цвета в выборе нет.");
                         }
-                        break;
+                        continue;
                     case "Вывод общей информации":
-                        Console.Write("Ваш пароль " + UserPassword + " Ваше имя: " + UserName + " Ваш пол: " + UserGender + " Ваш возраст: " + UserAge + " лет");
+                        Console.Write("Введите пароль: ");
+                        userInput = Console.ReadLine();
+                        if (userInput == userPasswordInput)
+                        {
+                            Console.Write(" Ваше имя: " + userNameInput + " Ваш пол: " + userGenderInput + " Ваш возраст: " + userAgeInput + " лет");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Пароль не верный!");
+                        }
+                        continue;
+                    case "Выход":
+                        Console.WriteLine("Программа завершена");
                         break;
                     default:
                         Console.WriteLine("Вы ввели неизвестную команду!");
