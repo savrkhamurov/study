@@ -6,14 +6,10 @@ namespace sequence
     {
         static void Main(string[] args)
         {
-            //данный цикл был выбран, благодаря его компактности и простате.
-            int incrementNumber = 7;
-            int numberСounter = 0;
-            
-            while (numberСounter != 98)
+            int limit = 98;
+            for (int i = 0; i <= limit; i+=7)
             {
-               Console.WriteLine(numberСounter += incrementNumber);
-            }
+                Console.WriteLine(i);            }
             Console.ReadLine();
         }
     }
