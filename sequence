@@ -7,8 +7,9 @@ namespace sequence
         static void Main(string[] args)
         {
             int seed = 7;
+            int seed2 = 7;
             int limit = 98;
-            for (int i = seed; i <= limit; i+=7)
+            for (int i = seed; i <= limit; i+=seed2)
             {
                 Console.WriteLine(i);
             }
