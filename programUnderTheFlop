@@ -1,1 +1,53 @@
+using System;
+
+namespace programUnderTheFlop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string password = "qwerty";
+            string userInput = "";
+            int numberOfAttempts = 3;
+            int increment = 0;
+            Console.WriteLine("Будьте внимательны! У вас всего 3 попытки! ");
+
+            for (; increment <= numberOfAttempts; increment++)
+            {
+                if (userInput == password)
+                {
+                    Console.WriteLine("Пороль верный!");
+                    Console.WriteLine("Теперь Вы узнаете что у Ромы чёрные нокти и на ногах!");
+                    break;
+                }
+                else if (increment == 0)
+                {
+                    Console.Write("Введите текстовый пароль:");
+                    userInput = Console.ReadLine();
+                    continue;
+                }
+                else if (increment == 1)
+                {
+                    Console.WriteLine("Пароль не верный! У вас осталось 2 попытки!");
+                    Console.Write("Введите текстовый пароль:");
+                    userInput = Console.ReadLine();
+                    continue;
+                }
+                else if (increment == 2)
+                {
+                    Console.WriteLine("Пароль не верный! У вас осталось 1 попытка!");
+                    Console.Write("Введите текстовый пароль:");
+                    userInput = Console.ReadLine();
+                    continue;
+                }
+                else if (increment == numberOfAttempts)
+                {
+                    Console.WriteLine("Вы потратли все попытки!");
+                    break;
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
 
