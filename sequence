@@ -6,10 +6,11 @@ namespace sequence
     {
         static void Main(string[] args)
         {
+            int seed = 7;
             int limit = 98;
-            for (int i = 7; i <= limit; i+=7)
+            for (int i = seed; i <= limit; i+=7)
             {
-                Console.WriteLine(i);            
+                Console.WriteLine(i);
             }
             Console.ReadLine();
         }
