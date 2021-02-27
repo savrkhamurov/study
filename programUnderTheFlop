@@ -9,38 +9,23 @@ namespace programUnderTheFlop
             string password = "qwerty";
             string userInput = "";
             int numberOfAttempts = 3;
-            int increment = 0;
             Console.WriteLine("Будьте внимательны! У вас всего 3 попытки! ");
 
-            for (; increment <= numberOfAttempts; increment++)
+            for (int i = 1; i <= numberOfAttempts; i++)
             {
+                Console.Write("Введите текстовый пароль что-бы узнать секрет!:");
+                userInput = Console.ReadLine();
                 if (userInput == password)
                 {
-                    Console.WriteLine("Пороль верный!");
-                    Console.WriteLine("Теперь Вы узнаете что у Ромы чёрные нокти и на ногах!");
+                    Console.WriteLine("Пароль верный!");
+                    Console.WriteLine("Теперь Вы узнаете что Киркоров женщина!");
                     break;
                 }
-                else if (increment == 0)
+                else if (userInput != password)
                 {
-                    Console.Write("Введите текстовый пароль:");
-                    userInput = Console.ReadLine();
-                    continue;
+                    Console.WriteLine("Пароль не верный!");
                 }
-                else if (increment == 1)
-                {
-                    Console.WriteLine("Пароль не верный! У вас осталось 2 попытки!");
-                    Console.Write("Введите текстовый пароль:");
-                    userInput = Console.ReadLine();
-                    continue;
-                }
-                else if (increment == 2)
-                {
-                    Console.WriteLine("Пароль не верный! У вас осталось 1 попытка!");
-                    Console.Write("Введите текстовый пароль:");
-                    userInput = Console.ReadLine();
-                    continue;
-                }
-                else if (increment == numberOfAttempts)
+                else if (i == 3)
                 {
                     Console.WriteLine("Вы потратли все попытки!");
                     break;
@@ -50,4 +35,3 @@ namespace programUnderTheFlop
         }
     }
 }
-
