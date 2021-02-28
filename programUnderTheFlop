@@ -21,14 +21,9 @@ namespace programUnderTheFlop
                     Console.WriteLine("Теперь Вы узнаете что Киркоров женщина!");
                     break;
                 }
-                else if (userInput != password)
-                {
-                    Console.WriteLine("Пароль не верный!");
-                }
-                else if (i == 3)
+                else if (i == numberOfAttempts)
                 {
                     Console.WriteLine("Вы потратли все попытки!");
-                    break;
                 }
             }
             Console.ReadKey();
