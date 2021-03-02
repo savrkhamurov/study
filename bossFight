@@ -1,1 +1,66 @@
+using System;
+
+namespace bossFight
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rand = new Random();
+            float warriorHealth = 500;
+            int crush = rand.Next(20, 50);
+            int shieldBash = rand.Next(50, 110);
+            int execution = rand.Next(200);
+            int secondWind = rand.Next(80, 190);
+            int warriorArmor = rand.Next(30, 50);
+
+            float bossHealth = 1500;
+            int bossDamage = rand.Next(30, 50);
+            int bossArmor = rand.Next(50, 75);
+
+            Console.WriteLine("Здоровье героя:" + warriorHealth + " броня " + warriorArmor);
+            Console.WriteLine("Здоровье босса:" + bossHealth + " броня " + bossArmor);
+            while (warriorHealth > 0 && bossHealth > 0)
+            {
+                Console.WriteLine("Сокрушение-" + crush);
+                bossHealth -= Convert.ToSingle(rand.Next(0, crush)) / 100 * bossArmor;
+                Console.WriteLine("Удар босса-" + bossDamage);
+                warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
+                if (crush > 35)
+                {
+                    Console.WriteLine("Удар щитом-" + shieldBash);
+                    bossHealth -= Convert.ToSingle(rand.Next(0, shieldBash)) / 100 * bossArmor;
+                    Console.WriteLine("Удар босса-" + bossDamage);
+                    warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
+                }
+                else if (warriorHealth < 100)
+                {
+                    Console.WriteLine("Второе дыхание-" + secondWind);
+                    warriorHealth += Convert.ToSingle(rand.Next(0, secondWind));
+                }
+                else if (bossHealth < 100)
+                {
+                    Console.WriteLine("Казнь-" + execution);
+                    bossHealth -= Convert.ToSingle(rand.Next(0, execution)) / 100 * bossArmor;
+                }
+                Console.WriteLine("Здоровье героя:" + warriorHealth);
+                Console.WriteLine(" Здоровье босса:" + bossHealth);
+            }
+             
+            if (warriorHealth <= 0 && bossHealth <=0)
+            {
+                Console.WriteLine("Оба мертвы.");
+            }
+            else if (warriorHealth <= 0)
+            {
+               Console.WriteLine("Герой пал");
+            }
+            else if (bossHealth <= 0)
+            {
+               Console.WriteLine("Босс повержен");
+            }
+            
+        }
+    }
+}
 
