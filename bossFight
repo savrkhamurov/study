@@ -7,11 +7,11 @@ namespace bossFight
         static void Main(string[] args)
         {
             Random rand = new Random();
-            float warriorHealth = 500;
+            float warriorHealth = 800;
             int crush = rand.Next(20, 50);
             int shieldBash = rand.Next(50, 110);
             int execution = rand.Next(200);
-            int secondWind = rand.Next(80, 190);
+            int secondWind = rand.Next(110, 210);
             int warriorArmor = rand.Next(30, 50);
 
             float bossHealth = 1500;
@@ -33,15 +33,17 @@ namespace bossFight
                     Console.WriteLine("Удар босса-" + bossDamage);
                     warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
                 }
-                else if (warriorHealth < 100)
-                {
-                    Console.WriteLine("Второе дыхание-" + secondWind);
-                    warriorHealth += Convert.ToSingle(rand.Next(0, secondWind));
-                }
                 else if (bossHealth < 100)
                 {
                     Console.WriteLine("Казнь-" + execution);
                     bossHealth -= Convert.ToSingle(rand.Next(0, execution)) / 100 * bossArmor;
+                    Console.WriteLine("Удар босса-" + bossDamage);
+                    warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
+                }
+                if (warriorHealth < 150)
+                {
+                    Console.WriteLine("Второе дыхание-" + secondWind);
+                    warriorHealth += Convert.ToSingle(rand.Next(0, secondWind));
                 }
                 Console.WriteLine("Здоровье героя:" + warriorHealth);
                 Console.WriteLine(" Здоровье босса:" + bossHealth);
@@ -63,4 +65,3 @@ namespace bossFight
         }
     }
 }
-
