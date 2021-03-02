@@ -7,16 +7,17 @@ namespace bossFight
         static void Main(string[] args)
         {
             Random rand = new Random();
-            float warriorHealth = 800;
+            float warriorHealth = 1500;
             int crush = rand.Next(20, 50);
             int shieldBash = rand.Next(50, 110);
             int execution = rand.Next(200);
             int secondWind = rand.Next(110, 210);
             int warriorArmor = rand.Next(30, 50);
-
-            float bossHealth = 1500;
+            int warriorAhealthThreshold = 300;
+            float bossHealth = 3000;
             int bossDamage = rand.Next(30, 50);
             int bossArmor = rand.Next(50, 75);
+            int bossAhealthThreshold = 500;
 
             Console.WriteLine("Здоровье героя:" + warriorHealth + " броня " + warriorArmor);
             Console.WriteLine("Здоровье босса:" + bossHealth + " броня " + bossArmor);
@@ -26,21 +27,21 @@ namespace bossFight
                 bossHealth -= Convert.ToSingle(rand.Next(0, crush)) / 100 * bossArmor;
                 Console.WriteLine("Удар босса-" + bossDamage);
                 warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
-                if (crush > 35)
+                if (crush >= 35)
                 {
                     Console.WriteLine("Удар щитом-" + shieldBash);
                     bossHealth -= Convert.ToSingle(rand.Next(0, shieldBash)) / 100 * bossArmor;
                     Console.WriteLine("Удар босса-" + bossDamage);
                     warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
                 }
-                else if (bossHealth < 100)
+                else if (bossHealth <= bossAhealthThreshold)
                 {
                     Console.WriteLine("Казнь-" + execution);
                     bossHealth -= Convert.ToSingle(rand.Next(0, execution)) / 100 * bossArmor;
                     Console.WriteLine("Удар босса-" + bossDamage);
                     warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
                 }
-                if (warriorHealth < 150)
+                else if (warriorHealth <= warriorAhealthThreshold)
                 {
                     Console.WriteLine("Второе дыхание-" + secondWind);
                     warriorHealth += Convert.ToSingle(rand.Next(0, secondWind));
