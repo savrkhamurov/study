@@ -8,27 +8,34 @@ namespace bossFight
         {
             Random rand = new Random();
             float warriorHealth = 1500;
-            int crush = rand.Next(20, 50); 
-            int shieldBash = rand.Next(50, 110); 
-            int execution = rand.Next(120, 180); 
-            int secondWind = rand.Next(80, 190); 
-            int warriorArmor = rand.Next(30, 50);
+            int crush =0; 
+            int shieldBash = 0; 
+            int execution = 0; 
+            int secondWind = 0; 
+            int warriorArmor = rand.Next(30, 50); ;
             int warriorAhealthThreshold = 500;
-            float bossHealth = 5500;
-            int bossDamage = rand.Next(110, 190); 
-            int violentBlow = rand.Next(250, 310); 
+            float bossHealth = 3500;
+            int bossDamage = 0; 
+            int violentBlow = 0; 
             int bossArmor = rand.Next(50, 75); 
-            int bossAhealthThreshold = 500;
+            int bossAhealthThreshold = 800;
 
             Console.WriteLine("Здоровье героя:" + warriorHealth + " броня " + warriorArmor);
             Console.WriteLine("Здоровье босса:" + bossHealth + " броня " + bossArmor);
             while (warriorHealth > 0 && bossHealth > 0)
             {
+                crush = rand.Next(20, 50);
+                shieldBash = rand.Next(50, 110);
+                execution = rand.Next(120, 180);
+                secondWind = rand.Next(120, 250);
+                bossDamage = rand.Next(80, 190);
+                violentBlow = rand.Next(250, 310);
+
                 Console.WriteLine("Сокрушение-" + crush);
                 bossHealth -= Convert.ToSingle(rand.Next(0, crush)) / 100 * bossArmor;
                 Console.WriteLine("Удар босса-" + bossDamage);
                 warriorHealth -= Convert.ToSingle(rand.Next(0, bossDamage)) / 100 * warriorArmor;
-                if (bossHealth < 500)
+                if (bossHealth < bossAhealthThreshold)
                 {
                     Console.WriteLine("Сокрушительный удар босса-" + violentBlow);
                     warriorHealth -= Convert.ToSingle(rand.Next(0, violentBlow)) / 100 * warriorArmor;
