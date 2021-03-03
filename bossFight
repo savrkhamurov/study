@@ -8,15 +8,15 @@ namespace bossFight
         {
             Random rand = new Random();
             float warriorHealth = 1500;
-            int crush = rand.Next(20, 50); // стандартная атака, но имеющая шанс позволить использовать способность shielBash.
-            int shieldBash = rand.Next(50, 110); //атака щитом наносящая существенный урон
-            int execution = rand.Next(120, 180); // когда у цели остаётся мало здоровья, воин пытается прикончить ёё, нанося мощные удар.
-            int secondWind = rand.Next(80, 190); // когда у воина мало здоровья у него открывается второе дыхание, которое восполняет ему здоровье.
+            int crush = rand.Next(20, 50); 
+            int shieldBash = rand.Next(50, 110); 
+            int execution = rand.Next(120, 180); 
+            int secondWind = rand.Next(80, 190); 
             int warriorArmor = rand.Next(30, 50);
             int warriorAhealthThreshold = 500;
             float bossHealth = 5500;
-            int bossDamage = rand.Next(110, 190); // стандартная атака босса
-            int violentBlow = rand.Next(250, 310); // Когда у босса мало здоровья, его окутывает ярость, он наносит сильный урон и оглушает противника.
+            int bossDamage = rand.Next(110, 190); 
+            int violentBlow = rand.Next(250, 310); 
             int bossArmor = rand.Next(50, 75); 
             int bossAhealthThreshold = 500;
 
