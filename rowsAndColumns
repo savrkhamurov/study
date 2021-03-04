@@ -27,7 +27,7 @@ namespace workHomeArray
                 Console.WriteLine();
             }
             Console.WriteLine("Исходная матрица.");
-            Console.WriteLine("Сумма вотрой строки:" + lineSum);
+            Console.WriteLine("Сумма второй строки:" + lineSum);
             Console.WriteLine("Произведение первого столбца:" + (columnProduct /= 2));
 
         }
