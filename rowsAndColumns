@@ -8,16 +8,29 @@ namespace workHomeArray
         {
             int[,] array = { {2, 5, 6 }, {1, 4, 5 }, {8, 9, 0 } };
             int lineSum = 0;
-            int columnProduct =0;
+            float columnProduct =0;
+            int originalMatrix = 0;
 
-            for (int i = 1; i < array.GetLength(0)-1; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    lineSum += array[i, j];
+                    if (array[i,j] == array[1,j])
+                    {
+                        lineSum += array[1,j];
+                    }
+                    if (array[i, j] == array[i, 0])
+                    {
+                        columnProduct += array[i, 0];   
+                    }
+                    Console.Write(array[i,j] + " ");
                 }
-                Console.WriteLine(lineSum);
+                Console.WriteLine();
             }
+            Console.WriteLine("Исходная матрица.");
+            Console.WriteLine("Сумма вотрой строки:" + lineSum);
+            Console.WriteLine("Произведение первого столбца:" + (columnProduct /= 2));
+
         }
     }
 }
