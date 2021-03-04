@@ -18,14 +18,18 @@ namespace workHomeArray
                     {
                         lineSum += array[1,j];
                     }
+                    
                     if (array[i, j] == array[i, 0])
                     {
                         columnProduct += array[i, 0];
                     }
+                    
                     Console.Write(array[i,j] + " ");
                 }
+                
                 Console.WriteLine();
             }
+            
             columnProduct /= 2;
             Console.WriteLine("Исходная матрица.");
             Console.WriteLine("Сумма второй строки:" + lineSum);
