@@ -9,7 +9,6 @@ namespace workHomeArray
             int[,] array = { {2, 5, 6 }, {1, 4, 5 }, {8, 9, 0 } };
             int lineSum = 0;
             float columnProduct =0;
-            int originalMatrix = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
