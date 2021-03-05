@@ -1,40 +1,29 @@
 using System;
 
-namespace workHomeArray
+namespace wrokHomeArray
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[,] array = { {2, 5, 6 }, {1, 4, 5 }, {8, 9, 0 } };
+            int[,] array = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 1, 2, 3 } };
             int lineSum = 0;
-            float columnProduct =0;
+            float composition = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
+                composition += array[i,0];
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[i,j] == array[1,j])
-                    {
-                        lineSum += array[1,j];
-                    }
-                    
-                    if (array[i, j] == array[i, 0])
-                    {
-                        columnProduct += array[i, 0];
-                    }
-                    
-                    Console.Write(array[i,j] + " ");
+                    lineSum += array[1, j];
+                    Console.Write(array[i, j]);
                 }
-                
                 Console.WriteLine();
             }
-            
-            columnProduct /= 2;
-            Console.WriteLine("Исходная матрица.");
-            Console.WriteLine("Сумма второй строки:" + lineSum);
-            Console.WriteLine("Произведение первого столбца:" + columnProduct);
-
+            composition /= 2;
+            Console.WriteLine("Сумма второй строки:"+lineSum);
+            Console.WriteLine("Проиведение первого столбца:"+composition);
+            Console.ReadLine();
         }
     }
 }
