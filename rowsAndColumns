@@ -7,7 +7,7 @@ namespace work
         static void Main(string[] args)
         {
             int[,] array = { { 4, 6, 8 }, { 7, 3, 5 }, { 2, 1, 0 } };
-            int lineSum2 = 0;
+            int lineSum = 0;
             float compositionСolumn = 0;
             float composition = 2;
             Console.WriteLine("Исходная матрица:");
