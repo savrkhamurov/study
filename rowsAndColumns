@@ -30,7 +30,7 @@ namespace work
                 Console.WriteLine();
             }
 
-            Console.WriteLine($"Сумма вотрой строки:{ lineSum2}");
+            Console.WriteLine($"Сумма второй строки:{ lineSum2}");
             Console.WriteLine($"Произведение второго столбца:{compositionСolumn}");
         }
     }
