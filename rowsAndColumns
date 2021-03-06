@@ -14,7 +14,7 @@ namespace work
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
-                lineSum2 += array[1, i];
+                lineSum += array[1, i];
                 compositionСolumn += array[i, 0];
                 if (i == array[i, 0])
                 {
