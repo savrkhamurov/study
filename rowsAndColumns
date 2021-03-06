@@ -6,27 +6,35 @@ namespace work
     {
         static void Main(string[] args)
         {
-            int[,] array = { { 4, 6, 8 }, { 7, 3, 5 }, { 2, 1, 0 } };
+            int[,] array = { { 4, 6, 8 }, { 7, 3, 5 },};
             int lineSum = 0;
             float compositionСolumn = 0;
             float composition = 2;
             Console.WriteLine("Исходная матрица:");
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < array.GetLength(1); i++)
             {
-                lineSum += array[1, i];
-                compositionСolumn += array[i, 0];
-                if (i == array[i, 0])
+                lineSum += array[1, i]; 
+            }
+            
+            for (int j = 0; j < array.GetLength(0); j++)
+            {
+                compositionСolumn += array[j, 0];
+                if (j == array[j, 0])
                 {
                     compositionСolumn /= composition;
                 }
-                for (int j = 0; j < array.GetLength(1); j++)
+            }
+            
+            for (int x = 0; x < array.GetLength(0); x++)
+            {
+                for (int z = 0; z < array.GetLength(1); z++)
                 {
-                    Console.Write(array[i, j]);
+                    Console.Write(array[x, z]);
                 }
                 Console.WriteLine();
             }
-           
+
             Console.WriteLine($"Сумма второй строки:{ lineSum}");
             Console.WriteLine($"Произведение первого столбца:{compositionСolumn}");
         }
