@@ -31,7 +31,7 @@ namespace work
             }
 
             Console.WriteLine($"Сумма второй строки:{ lineSum2}");
-            Console.WriteLine($"Произведение второго столбца:{compositionСolumn}");
+            Console.WriteLine($"Произведение первого столбца:{compositionСolumn}");
         }
     }
 }
