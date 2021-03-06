@@ -7,14 +7,14 @@ namespace work
         static void Main(string[] args)
         {
             int[,] array = { {4, 6, 8}, {7, 3, 5}, {2, 1, 0} };
-            int lineSum = 0;
+            int lineSum2 = 0;
             float compositionСolumn = 0;
             float composition = 2;
             Console.WriteLine("Исходная мастрица:");
             
             for (int j = 0; j < array.GetLength(0); j++)
             {
-                lineSum += array[1, j];
+                lineSum2 += array[1, j];
                 compositionСolumn += array[j, 0];
                 if (j == array[j,0])
                 {
@@ -30,7 +30,7 @@ namespace work
                 Console.WriteLine();
             }
 
-            Console.WriteLine($"Сумма вотрой строки:{ lineSum}");
+            Console.WriteLine($"Сумма вотрой строки:{ lineSum2}");
             Console.WriteLine($"Произведение второго столбца:{compositionСolumn}");
         }
     }
