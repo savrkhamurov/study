@@ -10,7 +10,7 @@ namespace work
             int lineSum2 = 0;
             float compositionСolumn = 0;
             float composition = 2;
-            Console.WriteLine("Исходная мастрица:");
+            Console.WriteLine("Исходная матрица:");
             
             for (int j = 0; j < array.GetLength(0); j++)
             {
