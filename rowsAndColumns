@@ -11,14 +11,14 @@ namespace work
             int compositionСolumn = 1;
             Console.WriteLine("Исходная матрица:");
 
-            for (int i = 0; i < array.GetLength(1); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                lineSum += array[1, i];
+                compositionСolumn *= array[i, 0];
             }
 
-            for (int j = 0; j < array.GetLength(0); j++)
+            for (int j = 0; j < array.GetLength(1); j++)
             {
-                compositionСolumn *= array[j, 0];
+                lineSum += array[1, j];
             }
 
             for (int i = 0; i < array.GetLength(0); i++)
