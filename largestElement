@@ -24,7 +24,7 @@ namespace largestElement
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine($"Максвимальный элемент массива: {maxElement}");
+            Console.WriteLine($"Максимальный элемент массива: {maxElement}");
 
             for (int i = 0; i < A.GetLength(0); i++)
             {
