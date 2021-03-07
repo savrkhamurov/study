@@ -1,30 +1,46 @@
 using System;
 
-namespace largestElement
+namespace work
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[,] A = new int [10,10];
+            int[,] array = new int[10, 10];
             Random rand = new Random();
             int maxElement = int.MinValue;
+            int minElement = 0;
 
-            for (int i = 0; i < A.GetLength(0); i++)
-            {  
-                for (int j = 0; j < A.GetLength(1); j++)
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    A[i, j] = rand.Next(0, 100);
-                    if (maxElement < A[i,j])
+                    array[i, j] = rand.Next(1, 100);
+                    Console.Write(array[i, j] + " ");
+                    if (maxElement < array[i, j])
                     {
-                        maxElement = A[i, j];
+                        maxElement = array[i, j];
                     }
-                    Console.Write(A[i,j] + " ");
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine(maxElement);
+            Console.WriteLine("Исходная матрица:^^^^^^^");
+            Console.WriteLine($"Макcимальный элемент массива : {maxElement}");
+            Console.WriteLine();
 
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    Console.Write(array[i, j] + " ");
+                    if (maxElement == array[i, j])
+                    {
+                        array[i, j] = minElement;
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Итоговая матрица:^^^^^^^");
         }
     }
 }
