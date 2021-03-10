@@ -14,14 +14,26 @@ namespace localArrays
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next(0,100);
-                if (i == min && array[i] > array[i + 1])
+                array[i] = rand.Next(0, 100);
+                if (i == min && i != array[i - 1])
                 {
-                    localMaxima = array[i];
-                    Console.WriteLine(localMaxima);
+                    if (array[i] > array[i + 1])
+                    {
+                        localMaxima = array[i];
+                        Console.WriteLine(localMaxima);
+                    }
                 }
 
-                if (i > 0 && i != max)
+                else if (i == max && i != array[i + 1])
+                {
+                    if (array[i] > array[i - 1])
+                    {
+                        localMaxima = array[i];
+                        Console.WriteLine(localMaxima);
+                    }
+                }
+
+                else if (i != min && i != max)
                 {
                     if (array[i] > array[i - 1] && array[i] > array[i + 1])
                     {
@@ -29,13 +41,8 @@ namespace localArrays
                         Console.WriteLine(localMaxima);
                     }
                 }
+            }
 
-                if (i == max && array[i] > array[i - 1])
-                {
-                    localMaxima = array[i];
-                    Console.WriteLine(localMaxima);
-                }
-            }   
         }
     }
 }
