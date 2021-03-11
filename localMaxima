@@ -8,7 +8,6 @@ namespace localArrays
         {
             int[] array = new int[30];
             Random rand = new Random();
-            int localMaxima = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
