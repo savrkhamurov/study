@@ -16,20 +16,17 @@ namespace localArrays
 
                 if (i == 0 && array[i] > array[i + 1])
                 {
-                    localMaxima = array[i];
-                    Console.WriteLine(localMaxima);
+                    Console.WriteLine(array[i]);
                 }
 
                 else if (i < array.Length -1 && array[i] > array[i - 1] && array[i] > array[i + 1])
                 {
-                    localMaxima = array[i];
-                    Console.WriteLine(localMaxima);
+                    Console.WriteLine(array[i]);
                 }
 
                 else if (i == array.Length && array[i] > array[i-1])
                 {
-                    localMaxima = array[i];
-                    Console.WriteLine(localMaxima);
+                    Console.WriteLine(array[i]);
                 }
             }
 
