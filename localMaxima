@@ -32,7 +32,8 @@ namespace localArrays
             {
                 Console.Write($"{array[array.Length -1]} ");
             }
-
+            
+            Console.ReadLine();
         }
     }
 }
