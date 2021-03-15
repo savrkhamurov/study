@@ -27,7 +27,7 @@ namespace dynamicArray
                     for (int i = 0; i < array.Length; i++)
                     {
                         tempArray = new int[array.Length + 1];
-                        tempArray[i] = Convert.ToInt32(Console.ReadLine());
+                        tempArray[i] = ?;
                         sum += tempArray[i];
                         array = tempArray;
                     }
