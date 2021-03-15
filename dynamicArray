@@ -6,20 +6,27 @@ namespace dynamicArray
     {
         static void Main(string[] args)
         {
-            int[] array = new int[1];
-            int[] tempArray = new int[array.Length +1];
-            int userInput = Convert.ToInt32(Console.ReadLine());
+            int userInput = 0;
+            int[] array = new int[0];
+            int[] tempArray;
+            int sum = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                tempArray[i] = array[i];
-            }
-            tempArray[tempArray.Length - 1] = 15;
-            array = tempArray;
+                userInput = Convert.ToInt32(Console.ReadLine());
+                if (userInput > 0)
+                {
+                    tempArray = new int[array.Length + 1];
+                    tempArray[i] = userInput;
+                    sum += tempArray[i];
+                    array = tempArray;
+                }
+                else
+                {
 
-            Console.Write(array.Length);
-            Console.ReadKey();
+                }
+                    
+            }
         }
     }
 }
-
