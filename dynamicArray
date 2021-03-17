@@ -12,7 +12,7 @@ namespace dynamicArray
             int sum = 0;
             bool exit = true;
 
-            while (true)
+            while (exit)
             {
                 if (userInput = 'exit')
                 {
