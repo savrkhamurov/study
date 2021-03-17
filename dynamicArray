@@ -8,7 +8,8 @@ namespace dynamicArray
         {
             string userInput = "";
             int[] array = new int[0];
-            int[] tempArray = new int[array.Length + 1];
+            int[] tempArray;
+            int numeric;
             int sum = 0;
             bool exit = true;
 
@@ -21,17 +22,21 @@ namespace dynamicArray
                 }
                 else if (userInput == "sum")
                 {
+                    foreach (int ageSum in array)
+                    {
+                        sum += ageSum;
+                    }
                     Console.WriteLine(sum);
                 }
                 else
                 {
-                    userInput = ?
+                    numeric = Convert.ToInt32(userInput);
+                    tempArray = new int[array.Length + 1];
                     for (int i = 0; i < array.Length; i++)
                     {
-                        tempArray[i] = array[i];
+                        tempArray[i] = numeric;
+                        array = tempArray;
                     }
-                    tempArray[tempArray.Length - 1] = userInput;
-                    array = tempArray;
 
                 }
             }
