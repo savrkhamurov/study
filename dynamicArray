@@ -6,15 +6,15 @@ namespace dynamicArray
     {
         static void Main(string[] args)
         {
-            string userInput = "";
+            char userInput = ' ';
             int[] array = new int[0];
             int[] tempArray;
             int sum = 0;
 
             while (true)
             {
-                userInput = Console.ReadLine();
-                if (userInput == "exit")
+               userInput = Convert.ToChar(Console.ReadLine());
+                if (userInput = 'exit')
                 {
                     break;
                 }
