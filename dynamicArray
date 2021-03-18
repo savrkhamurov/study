@@ -22,9 +22,9 @@ namespace dynamicArray
                 }
                 else if (userInput == "sum")
                 {
-                    foreach (int ageSum in array)
+                    for (int i = 0; i < array.Length; i++)
                     {
-                        sum += ageSum;
+                        sum += array[i];
                     }
                     Console.WriteLine(sum);
                 }
