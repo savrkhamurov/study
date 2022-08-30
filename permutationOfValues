@@ -1,0 +1,18 @@
+using System;
+
+namespace leorn1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = "Хамуров";
+            string surname = "Савр";
+            Console.WriteLine($"Имя:{name}  Фамилия:{surname}");
+            (name, surname) = (surname, name);
+
+            Console.WriteLine($"Имя:{name}  Фамилия:{surname}");
+
+        }
+    }
+}
