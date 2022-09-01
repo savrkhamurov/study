@@ -7,19 +7,23 @@ namespace leorn1
         static void Main(string[] args)
         {
             Random randomNumber = new Random();
-            int naturalNumber = randomNumber.Next(1, 28);
-            int naturalNumbersSum = 0;
+            int rangeNumber1 = 1;
+            int rangeNumber2 = 2;
+            int minimumNumber = 99;
+            int maximumNumber = 1000;
+            int naturalNumber = randomNumber.Next(rangeNumber1, rangeNumber2);
+            int naturalNumbersCount = 0;
             Console.WriteLine($"Число N:{naturalNumber}");
 
-            for (int i = naturalNumber; i < 1000; i+=naturalNumber)
+            for (int i = naturalNumber; i < maximumNumber; i+=naturalNumber)
             {
-                if (i > 99)
+                if (i > minimumNumber)
                 {
-                    naturalNumbersSum += 1;
+                    naturalNumbersCount ++;
                 }
             }
 
-            Console.WriteLine($"Количество натуральных чисел кратных N:{naturalNumbersSum}");
+            Console.WriteLine($"Количество натуральных чисел кратных N:{naturalNumbersCount}");
         }
     }
 }
