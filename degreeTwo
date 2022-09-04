@@ -1,0 +1,28 @@
+using System;
+
+namespace leorn1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random randomNumber = new Random();
+            int rangeRandomNumber = 4;;
+            int rangeRandomNumber2 = 100;
+            int number = randomNumber.Next(rangeRandomNumber, rangeRandomNumber2);
+            int numberTwo = 2;
+            int factorNumber = 2;
+            int degree = 1;
+
+            Console.WriteLine($"Число:{number}");
+
+            while (factorNumber < number)
+            {
+                factorNumber *= numberTwo;
+                degree ++;
+            }
+
+            Console.WriteLine($"Степень:{degree}, само число:{numberTwo}");
+        }
+    }
+}
