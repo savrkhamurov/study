@@ -7,30 +7,33 @@ namespace leorn1
         static void Main(string[] args)
         {
             string text = "(()(()))";
-            int switchValue = 0;
-            int nesting = 0;
+            int level = 0;
+            int maxLevel = 0;
 
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i] == '(')
                 {
-                    switchValue++;
-                    nesting++;
+                    level++;
+                    if (level > maxLevel)
+                    {
+                        maxLevel = level;
+                    }
                 }
-                else if (text[i] == ')' && switchValue > 0)
+                else if (text[i] == ')' && level > 0)
                 {
-                    switchValue--;
+                    level--;
                 }
                 else
                 {
-                    switchValue--;
+                    level--;
                     break;
                 }
             }
-            if (switchValue == 0)
+            if (level == 0)
             {
                 Console.WriteLine(text);
-                Console.WriteLine($"Cтрока корректная и максимум глубины равняется:{nesting - 1}");
+                Console.WriteLine($"Cтрока корректная и максимум глубины равняется:{maxLevel - 1}");
             }
             else
             {
