@@ -1,0 +1,38 @@
+using System;
+
+namespace leorn1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = "(()(()))";
+            int switchLogic = 0;
+            int nesting = 0;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == '(')
+                {
+                    switchLogic++;
+                    nesting++;
+                }
+                else if (text[i] == ')')
+                {
+                    switchLogic--;
+                }     
+            }
+            if (switchLogic == 0)
+            {
+                Console.WriteLine(text);
+                Console.WriteLine($"Cтрока корректная и максимум глубины равняется:{nesting - 1}");
+            }
+            else
+            {
+                Console.WriteLine("строка некорректная");
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
