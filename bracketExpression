@@ -7,22 +7,27 @@ namespace leorn1
         static void Main(string[] args)
         {
             string text = "(()(()))";
-            int switchLogic = 0;
+            int switchValue = 0;
             int nesting = 0;
 
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i] == '(')
                 {
-                    switchLogic++;
+                    switchValue++;
                     nesting++;
                 }
-                else if (text[i] == ')')
+                else if (text[i] == ')' && switchValue > 0)
                 {
-                    switchLogic--;
-                }     
+                    switchValue--;
+                }
+                else
+                {
+                    switchValue--;
+                    break;
+                }
             }
-            if (switchLogic == 0)
+            if (switchValue == 0)
             {
                 Console.WriteLine(text);
                 Console.WriteLine($"Cтрока корректная и максимум глубины равняется:{nesting - 1}");
